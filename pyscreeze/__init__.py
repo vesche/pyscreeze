@@ -488,8 +488,8 @@ def _screenshot_linux(imageFilename=None, region=None):
 
     with mss() as sct:
         if region:
-            top, left, width, height = region
-            monitor = {'top': top, 'left': left, 'width': width, 'height': height}
+            x1, y1, x2, y2 = region
+            monitor = {'top': y1, 'left': x1, 'width': x2, 'height': y2}
             sct_img = sct.grab(monitor)
         else:
             sct_img = sct.grab(sct.monitors[0])
